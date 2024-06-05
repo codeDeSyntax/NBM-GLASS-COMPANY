@@ -4,5 +4,13 @@ export const content = [
 ];
 export const theme = {
   extend: {},
+  colors: {
+    'text': '#050315',
+    'background': '#fbfbfe',
+    'primary': '#2f27ce',
+    'secondary': '#dedcff',
+    'accent': '#433bff',
+    'red':'#da4047'
+   },
 };
 export const plugins = [];

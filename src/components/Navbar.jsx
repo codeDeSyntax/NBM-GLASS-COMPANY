@@ -5,7 +5,10 @@ import {
   // FaInstagram,
   // FaTwitter,
 } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+// import NavContact from "./NavContact";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -19,15 +22,44 @@ const Navbar = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
+  const [isShrunk, setIsShrunk] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsShrunk(true);
+      } else {
+        setIsShrunk(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed w-full backdrop-blur-[30px] z-30 ">
-      <div className=" py-2 text-white flex items-center justify-between px-12">
+    <motion.nav
+      className={`fixed top-0 w-full flex justify-center flex-col
+      } z-30  ${
+        isShrunk &&
+        " backdrop-blur-[20px] py-10 bg-background  border-b-[1px] border-secondary  "
+      }`}
+      //
+      animate={{ height: isShrunk ? 50 : 70 }}
+      transition={{ duration: 0.3 }}
+    >
+      {/* {!isShrunk && <NavContact />} */}
+      <div className="w-full py-2 flex items-center justify-between px-12">
         <div className="flex items-center ">
-        <img src="nbmLogo.png" alt="" className="h-[40px] w-[40px]"/>
-        <p className="font-bold tracking-widest font-serif">NBM</p>
+          <img src="nbmLogo.png" alt="" className="h-[40px] w-[40px]" />
+          <p className="font-bold tracking-widest font-serif">NBM</p>
         </div>
-        <div className={`hidden md:flex gap-8 justify-between `}>
-          <a href="#" className="cursor-pointer  hover:text-gray-500">
+        <div
+          className={`hidden md:flex gap-8 justify-between items-center text-background ${
+            isShrunk && "text-text"
+          }`}
+        >
+          <a href="#" className="cursor-pointer  ">
             Home
           </a>
           {/* <div className="relative">
@@ -38,10 +70,19 @@ const Navbar = () => {
               Products
             </button>
           </div> */}
-          <a href="#" className="cursor-pointer  hover:text-gray-500">
+          <a href="#" className="cursor-pointer ">
             About Us
           </a>
-          <a href="#" className="cursor-pointer  hover:text-gray-500">
+          <a href="#" className="cursor-pointer ">
+            Services
+          </a>
+          <a href="#" className="cursor-pointer ">
+            Portfolio
+          </a>
+          <a
+            href="#"
+            className="cursor-pointer px-2 py-1 rounded-sm text-secondary bg-primary border-background"
+          >
             Contact Us
           </a>
         </div>
@@ -89,7 +130,7 @@ const Navbar = () => {
           </ul>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 
