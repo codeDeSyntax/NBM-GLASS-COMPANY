@@ -10,7 +10,7 @@ export const theme = {
     'primary': '#2f27ce',
     'secondary': '#dedcff',
     'accent': '#433bff',
-    'red':'#da4047'
+    'red':'#f74538'
    },
 };
 export const plugins = [];

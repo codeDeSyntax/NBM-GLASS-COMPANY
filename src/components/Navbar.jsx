@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 w-full flex justify-center flex-col
+      className={`fixed top-0 w-full flex justify-center flex-col shadow-md
       } z-30  ${
         isShrunk &&
         " backdrop-blur-[20px] py-10 bg-background  border-b-[1px] border-secondary  "

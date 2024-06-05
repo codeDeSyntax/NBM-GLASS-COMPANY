@@ -1,4 +1,3 @@
-// Tabs.js
 import { useState } from "react";
 import QuestionAnswer from "./Answers";
 
@@ -53,30 +52,53 @@ const Tabs = () => {
   ];
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex  relative">
+    <div className="container p-2  mx-auto border-t-[1px] border-t-background border-secondary bg-[white] my-10">
+      <div className="flex flex-col md:flex-row relative border-t-[1px] border-secondary">
         {tabs.map((tab, index) => (
           <div
             key={index}
-            className={` py-6 px-4 w-[20%] border-[1px] border-r-0 flex-1 flex items-center justify-center  border-secondary ${
+            className={`py-10 px-4 w-full md:w-[20%] border-t-background border-b-[1px] border-b-secondary border-x-secondary border-l-[1px]  flex-1 flex items-center justify-center border-secondary ${
               activeTab === index
-                ? "bg-text text-background"
-                : "bg-background"
+                ? "bg-secondary md:bg-red text-text md:text-background"
+                : "bg-[white]"
             }`}
             onClick={() => setActiveTab(index)}
           >
-            {tab.title}
+            <div className="w-full">
+              {tab.title}
+              {activeTab === index && (
+                <div className="block md:hidden mt-4">
+                  {tab.questions.map((qa, qaIndex) => (
+                    <QuestionAnswer
+                      key={qaIndex}
+                      question={qa.question}
+                      answer={qa.answer}
+                    />
+                  ))}
+                  <img
+                    src="glassroom.jpeg"
+                    alt=""
+                    className="w-full h-auto mt-4"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
-      <div className="mt-4">
-        {tabs[activeTab].questions.map((qa, index) => (
-          <QuestionAnswer
-            key={index}
-            question={qa.question}
-            answer={qa.answer}
-          />
-        ))}
+      <div className="mt-4 w-full hidden md:flex md:flex-row">
+        <div className="md:w-[65%] px-6">
+          {tabs[activeTab].questions.map((qa, index) => (
+            <QuestionAnswer
+              key={index}
+              question={qa.question}
+              answer={qa.answer}
+            />
+          ))}
+        </div>
+        <div className="md:w-[35%] p-2">
+          <img src="glassroom.jpeg" alt="" className="w-full h-auto" />
+        </div>
       </div>
     </div>
   );

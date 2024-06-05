@@ -17,9 +17,9 @@ const FixedImage = () => {
   }, []);
   return (
     <div
-      className={` w-full h-[80vh]  bg-[linear-gradient(to_right_bottom,rgba(57,7,160,0.8),rgba(8,8,8,0.8)),url('home.jpeg')]  homepage bg-cover bg-no-repeat flex items-center justify-center p-4`}
+      className={` w-full h-[80vh]  bg-[linear-gradient(to_right_bottom,rgba(30,0,160,0.8),rgba(8,8,8,0.8)),url('home.jpeg')]  homepage bg-cover bg-no-repeat flex items-center justify-center p-4`}
     >
-      <Navbar/>
+      <Navbar />
       {pieces.map((piece, index) => (
         <motion.div
           key={index}
