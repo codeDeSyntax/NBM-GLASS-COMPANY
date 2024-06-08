@@ -52,8 +52,8 @@ const Tabs = () => {
   ];
 
   return (
-    <div className="container p-2  mx-auto border-t-[1px] border-t-background border-secondary bg-[white] my-10">
-      <div className="flex flex-col md:flex-row relative border-t-[1px] border-secondary">
+    <div className="container  w-[90%] m-auto  border-secondary bg-[white] my-10">
+      <div className="flex flex-col md:flex-row relative  border-secondary">
         {tabs.map((tab, index) => (
           <div
             key={index}
@@ -65,7 +65,7 @@ const Tabs = () => {
             onClick={() => setActiveTab(index)}
           >
             <div className="w-full">
-              {tab.title}
+              <p className="font-bold text-[1rem] ">{tab.title}</p>
               {activeTab === index && (
                 <div className="block md:hidden mt-4">
                   {tab.questions.map((qa, qaIndex) => (

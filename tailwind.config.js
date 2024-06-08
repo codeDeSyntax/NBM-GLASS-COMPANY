@@ -5,12 +5,12 @@ export const content = [
 export const theme = {
   extend: {},
   colors: {
-    'text': '#050315',
-    'background': '#fbfbfe',
-    'primary': '#2f27ce',
-    'secondary': '#dedcff',
-    'accent': '#433bff',
-    'red':'#f74538'
-   },
+    text: "#050315",
+    background: "#f2f2f2",
+    primary: "#2f27ce",
+    secondary: "#dedcff",
+    accent: "#433bff",
+    red: "#E74C3C",
+  },
 };
 export const plugins = [];

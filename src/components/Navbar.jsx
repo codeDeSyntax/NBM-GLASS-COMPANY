@@ -45,7 +45,7 @@ const Navbar = () => {
         " backdrop-blur-[20px] py-10 bg-background  border-b-[1px] border-secondary  "
       }`}
       //
-      animate={{ height: isShrunk ? 50 : 70 }}
+      animate={{ height: isShrunk ? 150 : 70 }}
       transition={{ duration: 0.3 }}
     >
       {/* {!isShrunk && <NavContact />} */}
@@ -93,9 +93,13 @@ const Navbar = () => {
             onClick={handleToggle}
           >
             {toggleMenu ? (
-              <FaTimes className="transition-transform transform rotate-360 duration-300" />
+              <FaTimes className="transition-transform transform rotate-360 duration-300 " />
             ) : (
-              <FaBars className="transition-transform transform rotate-360 duration-300" />
+              <FaBars
+                className={`transition-transform transform rotate-360 duration-300 text-background ${
+                  isShrunk && "text-text"
+                }`}
+              />
             )}
           </label>
         </div>
