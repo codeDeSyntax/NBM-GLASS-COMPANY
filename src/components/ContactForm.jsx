@@ -1,7 +1,7 @@
 const ContactForm = () => {
   return (
-    <div className="container mx-auto p-4 flex flex-col lg:flex-row items-center bg-white shadow-lg rounded-lg my-8">
-      <div className="lg:w-1/2 p-4">
+    <div className="container lg:w-[90%] mx-auto p-4 flex flex-col lg:flex-row items-center bg-white shadow-lg rounded-lg my-8 ">
+      <div className="lg:w-1/2 w-full p-4">
         <h2 className="text-2xl font-bold mb-4 text-center lg:text-left">
           Contact Us
         </h2>
@@ -12,7 +12,7 @@ const ContactForm = () => {
             </label>
             <input
               type="text"
-              className="mt-1 block w-full px-3 py-2 border border-[silver] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1  block w-full px-3 py-2 border border-[silver] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="Your Name"
             />
           </div>
@@ -46,9 +46,24 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
-      <div className="lg:w-1/2 p-4">
+      <div className="lg:w-1/2 p-4 grid grid-cols-2 gap-4">
         <img
           src="nbmlog1.jpeg"
+          alt="Contact Us"
+          className="w-full h-full object-cover rounded-md shadow-md"
+        />
+        <img
+          src="glass1.jpeg"
+          alt="Contact Us"
+          className="w-full h-full object-cover rounded-md shadow-md"
+        />
+        <img
+          src="/glassPack/glassCollection1.jpg"
+          alt="Contact Us"
+          className="w-full h-full object-cover rounded-md shadow-md"
+        />
+        <img
+          src="/glassPack/glassCollection2.jpg"
           alt="Contact Us"
           className="w-full h-full object-cover rounded-md shadow-md"
         />

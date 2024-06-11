@@ -8,6 +8,9 @@ import ProductList from "../components/Products";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import FloatingWhatsAppIcon from "../components/Whatsapp";
+// import MyComponent from "../components/Spring";
+// import Framer from "../components/Spring";
+// import Images from "../components/GalleryScroll";
 
 const cardVariants = {
   offscreen: {
@@ -71,7 +74,7 @@ const LandingPage = () => {
           zIndex: -1,
         }}
       />
-      <FloatingWhatsAppIcon/>
+      <FloatingWhatsAppIcon />
       <motion.div
         className="bg-background"
         ref={fixedImageRef}
@@ -93,8 +96,11 @@ const LandingPage = () => {
       >
         <Socials />
       </motion.div>
+      {/* <Images/> */}
       <ProductList />
       <ContactForm />
+      {/* <MyComponent/> */}
+      {/* <Framer /> */}
       <Footer />
     </div>
   );
