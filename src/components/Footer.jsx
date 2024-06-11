@@ -1,5 +1,4 @@
-
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -7,7 +6,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-secondary text-white py-8 mt-8 foot"
+      className="bg-accent text-white py-8 mt-8 foot"
     >
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="text-center md:text-left mb-4 md:mb-0 md:w-1/3">
@@ -24,16 +23,38 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <h4 className="text-md font-semibold">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Services</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Contact</a></li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white">Facebook</a>
-            <a href="#" className="text-gray-400 hover:text-white">Twitter</a>
-            <a href="#" className="text-gray-400 hover:text-white">LinkedIn</a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              Facebook
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              Twitter
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>

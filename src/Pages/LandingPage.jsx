@@ -8,6 +8,7 @@ import ProductList from "../components/Products";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import FloatingWhatsAppIcon from "../components/Whatsapp";
+import ProjectsSlider from "../components/ProjectsSwipe";
 // import MyComponent from "../components/Spring";
 // import Framer from "../components/Spring";
 // import Images from "../components/GalleryScroll";
@@ -86,6 +87,7 @@ const LandingPage = () => {
       </motion.div>
 
       <Tabs />
+      <ProjectsSlider/>
 
       <motion.div
         className="bg-background"
