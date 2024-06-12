@@ -9,6 +9,7 @@ import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import FloatingWhatsAppIcon from "../components/Whatsapp";
 import ProjectsSlider from "../components/ProjectsSwipe";
+import Navbar from "../components/Navbar";
 // import MyComponent from "../components/Spring";
 // import Framer from "../components/Spring";
 // import Images from "../components/GalleryScroll";
@@ -75,6 +76,7 @@ const LandingPage = () => {
           zIndex: -1,
         }}
       />
+      <Navbar />
       <FloatingWhatsAppIcon />
       <motion.div
         className="bg-background"

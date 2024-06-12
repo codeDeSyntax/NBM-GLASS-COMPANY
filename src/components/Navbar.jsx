@@ -1,12 +1,13 @@
 import {
   FaBars,
+  FaSearch,
   FaTimes,
   // FaFacebook,
   // FaInstagram,
   // FaTwitter,
 } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+// import { motion } from "framer-motion";
 
 // import NavContact from "./NavContact";
 
@@ -22,42 +23,19 @@ const Navbar = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
-  const [isShrunk, setIsShrunk] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsShrunk(true);
-      } else {
-        setIsShrunk(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <motion.nav
+    <nav
       className={`fixed top-0 w-full flex justify-center flex-col shadow-md
-      } z-30  ${
-        isShrunk &&
-        " backdrop-blur-[20px] py-10 bg-background  border-b-[1px] border-secondary  "
-      }`}
-      //
-      animate={{ height: isShrunk ? 150 : 70 }}
-      transition={{ duration: 0.3 }}
+      } z-30   ${"bg-background    "}`}
     >
       {/* {!isShrunk && <NavContact />} */}
-      <div className="w-full py-2 flex items-center justify-between px-12">
+      <div className="w-full py-2 flex items-center justify-around px-12">
         <div className="flex items-center ">
           <img src="nbmLogo.png" alt="" className="h-[40px] w-[40px]" />
           <p className="font-bold tracking-widest font-serif">NBM</p>
         </div>
         <div
-          className={`hidden md:flex gap-8 justify-between items-center text-background ${
-            isShrunk && "text-text"
-          }`}
+          className={`hidden md:flex gap-8 justify-between items-center text-background ${"text-text text-[1.2rem]"} font-medium`}
         >
           <a href="#" className="cursor-pointer  ">
             Home
@@ -79,11 +57,28 @@ const Navbar = () => {
           <a href="#" className="cursor-pointer ">
             Portfolio
           </a>
+          <div className="p-5 flex items-center justify-center bg-accent rounded-full">
+            <FaSearch className="text-[1rem] text-primary " />
+          </div>
           <a
-            href="#"
-            className="cursor-pointer px-2 py-1 rounded-sm text-secondary bg-primary border-background"
+            href="your-contact-url"
+            className="flex items-center justify-center bg-secondary hover:bg-teal-600 text-background font-medium py-2 px-4 rounded-full"
           >
-            Contact Us
+            <svg
+              className="w-4 h-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 7H7v6m0 0h6m-6 0l7-7m4 6h5a2 2 0 002-2V5a2 2 0 00-2-2h-5a2 2 0 00-2 2v5a2 2 0 002 2z"
+              ></path>
+            </svg>
+            CONTACT US
           </a>
         </div>
         <div className="cursor-pointer md:hidden">
@@ -96,9 +91,7 @@ const Navbar = () => {
               <FaTimes className="transition-transform transform rotate-360 duration-300 " />
             ) : (
               <FaBars
-                className={`transition-transform transform rotate-360 duration-300 text-background ${
-                  isShrunk && "text-text"
-                }`}
+                className={`transition-transform transform rotate-360 duration-300 text-background ${"text-text"}`}
               />
             )}
           </label>
@@ -134,7 +127,7 @@ const Navbar = () => {
           </ul>
         </div>
       )}
-    </motion.nav>
+    </nav>
   );
 };
 
