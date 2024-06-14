@@ -85,8 +85,8 @@ const Socials = () => {
       <h2 className="text-2xl font-bold text-secondary mb-4">
         CLIENT EXPERIENCES
       </h2>
-      <div className="w-[90%] px-3 py-6 bg-[url(glassar.jpg)]">
-        <Slider {...settings} className="mx-4 my-3 backdrop-blur-2xl">
+      <div className="w-[90%] px-3 py-6 ">
+        <Slider {...settings} className="mx-4 my-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -94,13 +94,13 @@ const Socials = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="p-6 bg-white shadow-lg rounded-xl flex items-center justify-center flex-col hover:shadow-2xl transition-shadow duration-300 ease-in-out">
-                <div className="w-24 h-24 bg-cover bg-center rounded-full bg-[url('profile.jpg')] mb-4"></div>
+              <div className="p-6 w-full bg-white  rounded-xl flex items-center justify-center flex-col shadow-md">
+                <div className="w-24 h-24 bg-cover bg-center rounded-full bg-[url('/profile.jpg')] mb-4"></div>
                 <p className="text-xl font-semibold">{testimonial.name}</p>
                 <p className="text-sm text-gray-600 mb-2">
                   {testimonial.feedback}
                 </p>
-                <p className="text-sm text-background">
+                <p className="text-sm text-text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Accusantium quasi, doloribus assumenda possimus excepturi
                   maxime? Expedita quas blanditiis ea ullam? Quis sequi quos et,
