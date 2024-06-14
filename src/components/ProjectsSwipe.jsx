@@ -58,19 +58,19 @@ const projects = [
     description: "Launched in 2012 as part of the re-organization of the ...",
   },
   {
-    image: "proj1.jpg",
+    image: "/proj1.jpg",
     title: "REWAG Headquarters",
     description:
       "The 10,500 square meters administrative building of Regensburger Municipal utilities ...",
   },
   {
-    image: "nbmlog1.jpeg",
+    image: "/nbmlog1.jpeg",
     title: "REWAG Headquarters",
     description:
       "The 10,500 square meters administrative building of Regensburger Municipal utilities ...",
   },
   {
-    image: "nbmlog1.jpeg",
+    image: "/nbmlog1.jpeg",
     title: "REWAG Headquarters",
     description:
       "The 10,500 square meters administrative building of Regensburger Municipal utilities ...",

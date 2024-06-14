@@ -91,6 +91,7 @@ const LandingPage = () => {
       <ProductSlider />
 
       {/* <Tabs /> */}
+      <ProjectsSlider />
 
       <motion.div
         className="bg-background"
@@ -106,7 +107,6 @@ const LandingPage = () => {
       <ContactForm />
       {/* <MyComponent/> */}
       {/* <Framer /> */}
-      <ProjectsSlider />
       <Footer />
     </div>
   );

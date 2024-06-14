@@ -1,6 +1,7 @@
 import { FaShieldAlt, FaLightbulb } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -87,7 +88,12 @@ const Socials = () => {
       <div className="w-[90%] px-3 py-6 bg-[url(glassar.jpg)]">
         <Slider {...settings} className="mx-4 my-3 backdrop-blur-2xl">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="text-center px-4 ">
+            <motion.div
+              key={index}
+              className="text-center px-4"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="p-6 bg-white shadow-lg rounded-xl flex items-center justify-center flex-col hover:shadow-2xl transition-shadow duration-300 ease-in-out">
                 <div className="w-24 h-24 bg-cover bg-center rounded-full bg-[url('profile.jpg')] mb-4"></div>
                 <p className="text-xl font-semibold">{testimonial.name}</p>
@@ -102,7 +108,7 @@ const Socials = () => {
                   laborum.
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </Slider>
       </div>
