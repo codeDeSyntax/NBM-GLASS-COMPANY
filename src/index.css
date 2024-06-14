@@ -6,6 +6,9 @@
 .foot{
   width: 100vw !important;
 }
+.card-container{
+  font-family: Baloo 2
+}
 /* #menu-toggle:checked + #menu {
   display: block;
 }

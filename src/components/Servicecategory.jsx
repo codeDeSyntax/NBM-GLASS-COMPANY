@@ -28,10 +28,10 @@ const categories = [
 const ServiceCategory = () => {
   return (
     <div className="bg-primary py-16 flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-background mb-4">
+      <h2 className="text-2xl font-bold text-background mb-4">
         SUSTAINABILITY
       </h2>
-      <p className="text-xl text-accent text-center mb-8 px-4">
+      <p className="text-[1rem] text-accent text-center mb-8 px-4">
         With 350 years of experience in designing and delivering architectural
         glazing projects sustainability is now part of our DNA
       </p>
@@ -52,7 +52,7 @@ const ServiceCategory = () => {
                 className="object-fit   w-full h-64 md:h-72"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <h3 className="text-white text-xl md:text-2xl font-bold">
+                <h3 className="text-background text-xl md:text-2xl font-bold">
                   {category.title}
                 </h3>
               </div>

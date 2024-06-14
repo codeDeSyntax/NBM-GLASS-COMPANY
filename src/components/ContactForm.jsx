@@ -9,8 +9,9 @@ const ContactForm = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl font-bold mb-3 text-background text-center">
+        <h2 className="text-3xl flex items-center justify-center  gap-3 font-bold mb-3 text-background text-center">
           Contact Us
+          <img src="/contact.png" alt="" className="w-20 h-29 animate-bounce" />
         </h2>
         <form className="space-y-6 text-background">
           <div>

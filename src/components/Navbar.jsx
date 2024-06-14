@@ -22,7 +22,7 @@ const Navbar = () => {
           <img src="nbmLogo.png" alt="Logo" className="h-[40px] w-[40px]" />
           <p className="font-bold tracking-widest font-serif ml-2">NBM</p>
         </div>
-        <div className="hidden md:flex gap-8 items-center text-text text-[1.2rem] font-medium">
+        <div className="hidden md:flex gap-8 items-center text-base font-body font-medium">
           <a href="#" className="cursor-pointer">
             Home
           </a>

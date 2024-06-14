@@ -64,7 +64,7 @@ const LandingPage = () => {
 
   return (
     <div
-      className="card-container bg-background"
+      className="card-container bg-background font-heading"
       style={{ position: "relative", overflow: "hidden" }}
     >
       <div
@@ -90,7 +90,7 @@ const LandingPage = () => {
       >
         <FixedImage />
       </motion.div>
-      <ServiceCategory/>
+      <ServiceCategory />
       <ProductSlider />
 
       {/* <Tabs /> */}
@@ -105,7 +105,7 @@ const LandingPage = () => {
       >
         <Socials />
       </motion.div>
-      <Mac/>
+      <Mac />
       {/* <Images/> */}
       {/* <ProductList /> */}
       <ContactForm />
