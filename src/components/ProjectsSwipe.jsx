@@ -25,7 +25,7 @@ function ProjectsSlider() {
           }}
           navigation={true}
           modules={[Navigation]}
-          className="mySwiper backdrop-blur-3xl"
+          className="mySwiper backdrop-blur-3xl mb-40 md:mb-0"
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index}>

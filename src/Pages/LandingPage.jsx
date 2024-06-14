@@ -11,6 +11,7 @@ import FloatingWhatsAppIcon from "../components/Whatsapp";
 import ProjectsSlider from "../components/ProjectsSwipe";
 import Navbar from "../components/Navbar";
 import ProductSlider from "../components/QuestService";
+import ServiceCategory from "../components/Servicecategory";
 // import MyComponent from "../components/Spring";
 // import Framer from "../components/Spring";
 // import Images from "../components/GalleryScroll";
@@ -88,6 +89,7 @@ const LandingPage = () => {
       >
         <FixedImage />
       </motion.div>
+      <ServiceCategory/>
       <ProductSlider />
 
       {/* <Tabs /> */}

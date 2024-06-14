@@ -11,7 +11,7 @@ const Footer = () => {
     >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left">
         <div className="flex flex-col items-center md:items-start">
-          <img src="proj1.jpg" alt="Saint-Gobain Logo" className="mb-4 w-32 h-32 object-cover" />
+          <img src="proj1.jpg" alt="Saint-Gobain Logo" className="mb-4 w-full h-32 object-cover" />
           <p className="text-gray-700 max-w-xs">
             Saint-Gobain Building Glass manufactures and offers a full range of different types of flat construction glass.
           </p>
