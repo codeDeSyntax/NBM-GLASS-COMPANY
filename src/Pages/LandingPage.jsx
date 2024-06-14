@@ -12,6 +12,7 @@ import ProjectsSlider from "../components/ProjectsSwipe";
 import Navbar from "../components/Navbar";
 import ProductSlider from "../components/QuestService";
 import ServiceCategory from "../components/Servicecategory";
+import Mac from "../components/Mac";
 // import MyComponent from "../components/Spring";
 // import Framer from "../components/Spring";
 // import Images from "../components/GalleryScroll";
@@ -104,6 +105,7 @@ const LandingPage = () => {
       >
         <Socials />
       </motion.div>
+      <Mac/>
       {/* <Images/> */}
       {/* <ProductList /> */}
       <ContactForm />

@@ -56,9 +56,8 @@ const FixedImage = () => {
     <animated.div
       style={{
         opacity,
-        position: 'relative',
-        width: '100%',
-       
+        position: "relative",
+        width: "100%",
       }}
       className="w-full h-[70vh] md:h-[80vh] bg-cover bg-no-repeat flex items-center justify-center p-4"
     >
@@ -66,11 +65,11 @@ const FixedImage = () => {
         style={{
           ...transitionSpring,
           backgroundImage: `linear-gradient(to right bottom, rgba(30,0,160,0.8), rgba(8,8,8,0.8)), url('${images[currentImage]}')`,
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           zIndex: 0,
         }}
       />
@@ -78,11 +77,11 @@ const FixedImage = () => {
         style={{
           opacity: transitionSpring.opacity.to((o) => 1 - o),
           backgroundImage: `linear-gradient(to right bottom, rgba(30,0,160,0.8), rgba(8,8,8,0.8)), url('${images[nextImage]}')`,
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           zIndex: 0,
         }}
       />
@@ -115,11 +114,11 @@ const FixedImage = () => {
             backgroundPosition: `${(index % 3) * 33.33}% ${
               Math.floor(index / 3) * 33.33
             }%`,
-            position: 'relative', // Ensure all elements are stacked on top of each other
+            position: "relative", // Ensure all elements are stacked on top of each other
             zIndex: 1, // Ensure content is above the background images
           }}
         >
-          <h1 className="font-extrabold text-background text-3xl text-center">
+          <h1 className="font-extrabold text-accent text-3xl text-center">
             We Supply <span className="text-red font-serif">Quality </span>and{" "}
             <span className=" font-serif">Reliable </span>
             Services..

@@ -1,9 +1,10 @@
-import { FaShieldAlt, FaLightbulb } from "react-icons/fa";
-import { MdWork } from "react-icons/md";
+// import { FaShieldAlt, FaLightbulb } from "react-icons/fa";
+// import { MdWork } from "react-icons/md";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Qualities from "./Qualities";
 
 const testimonials = [
   { name: "Client 1", feedback: "Great service!" },
@@ -41,7 +42,8 @@ const Socials = () => {
 
   return (
     <div className="bg-background py-[10vh] flex flex-col items-center justify-between p-4">
-      <h2 className="text-2xl font-bold text-secondary mb-4">
+      <Qualities/>
+      {/* <h2 className="text-2xl font-bold text-secondary mb-4">
         WHAT PEOPLE SAY AND FEEL ABOUT US?
       </h2>
       <section className="flex flex-col w-[90%] md:flex-row items-center justify-center gap-10 mb-20">
@@ -84,7 +86,7 @@ const Socials = () => {
       </section>
       <h2 className="text-2xl font-bold text-secondary mb-4">
         CLIENT EXPERIENCES
-      </h2>
+      </h2> */}
       <div className="w-[90%] px-3 py-6 ">
         <Slider {...settings} className="mx-4 my-3">
           {testimonials.map((testimonial, index) => (

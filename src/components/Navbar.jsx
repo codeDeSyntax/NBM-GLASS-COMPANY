@@ -1,8 +1,4 @@
-import {
-  FaBars,
-  FaSearch,
-  FaTimes,
-} from "react-icons/fa";
+import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -18,17 +14,27 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full flex justify-center flex-col shadow-md z-30 bg-background`}>
-      <div className="w-full py-2 flex items-center justify-between px-4 md:px-12">
+    <nav
+      className={`fixed top-0 w-full flex justify-center flex-col shadow-md z-30 bg-background`}
+    >
+      <div className="w-full py-2 flex items-center justify-between px-4 lg:px-12">
         <div className="flex items-center">
           <img src="nbmLogo.png" alt="Logo" className="h-[40px] w-[40px]" />
           <p className="font-bold tracking-widest font-serif ml-2">NBM</p>
         </div>
         <div className="hidden md:flex gap-8 items-center text-text text-[1.2rem] font-medium">
-          <a href="#" className="cursor-pointer">Home</a>
-          <a href="#" className="cursor-pointer">About Us</a>
-          <a href="#" className="cursor-pointer">Services</a>
-          <a href="#" className="cursor-pointer">Portfolio</a>
+          <a href="#" className="cursor-pointer">
+            Home
+          </a>
+          <a href="#" className="cursor-pointer">
+            About Us
+          </a>
+          <a href="#" className="cursor-pointer">
+            Services
+          </a>
+          <a href="#" className="cursor-pointer">
+            Portfolio
+          </a>
           <div className="p-2 flex items-center justify-center bg-accent rounded-full">
             <FaSearch className="text-[1rem] text-primary" />
           </div>
@@ -65,7 +71,9 @@ const Navbar = () => {
         <div className="md:hidden bg-background z-20">
           <ul className="flex flex-col items-center">
             <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
-              <a href="#" onClick={handleToggle}>Home</a>
+              <a href="#" onClick={handleToggle}>
+                Home
+              </a>
             </li>
             <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
               <button
@@ -75,7 +83,7 @@ const Navbar = () => {
                 Products
               </button>
               {dropdownOpen && (
-                <ul className="bg-blue-800">
+                <ul className="bg-primary">
                   <li className="p-2 hover:bg-blue-700">Product 1</li>
                   <li className="p-2 hover:bg-blue-700">Product 2</li>
                   <li className="p-2 hover:bg-blue-700">Product 3</li>
@@ -83,10 +91,14 @@ const Navbar = () => {
               )}
             </li>
             <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
-              <a href="#" onClick={handleToggle}>About Us</a>
+              <a href="#" onClick={handleToggle}>
+                About Us
+              </a>
             </li>
             <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
-              <a href="#" onClick={handleToggle}>Contact Us</a>
+              <a href="#" onClick={handleToggle}>
+                Contact Us
+              </a>
             </li>
           </ul>
         </div>
