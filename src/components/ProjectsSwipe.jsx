@@ -4,7 +4,7 @@ import "swiper/swiper-bundle.css";
 
 function ProjectsSlider() {
   return (
-    <div className="relative w-full h-screen bg-[url('backg.png')] bg-cover flex items-center justify-center ">
+    <div className="relative w-full h-screen bg-[url('/backg.png')] bg-cover flex items-center justify-center ">
       <div className="container mx-auto px-4">
         <div className="text-white mb-6 text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-bold text-background">
