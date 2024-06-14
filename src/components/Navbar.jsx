@@ -2,14 +2,8 @@ import {
   FaBars,
   FaSearch,
   FaTimes,
-  // FaFacebook,
-  // FaInstagram,
-  // FaTwitter,
 } from "react-icons/fa";
 import { useState } from "react";
-// import { motion } from "framer-motion";
-
-// import NavContact from "./NavContact";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -24,41 +18,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 w-full flex justify-center flex-col shadow-md
-      } z-30   ${"bg-background    "}`}
-    >
-      {/* {!isShrunk && <NavContact />} */}
-      <div className="w-full py-2 flex items-center justify-around px-12">
-        <div className="flex items-center ">
-          <img src="nbmLogo.png" alt="" className="h-[40px] w-[40px]" />
-          <p className="font-bold tracking-widest font-serif">NBM</p>
+    <nav className={`fixed top-0 w-full flex justify-center flex-col shadow-md z-30 bg-background`}>
+      <div className="w-full py-2 flex items-center justify-between px-4 md:px-12">
+        <div className="flex items-center">
+          <img src="nbmLogo.png" alt="Logo" className="h-[40px] w-[40px]" />
+          <p className="font-bold tracking-widest font-serif ml-2">NBM</p>
         </div>
-        <div
-          className={`hidden md:flex gap-8 justify-between items-center text-background ${"text-text text-[1.2rem]"} font-medium`}
-        >
-          <a href="#" className="cursor-pointer  ">
-            Home
-          </a>
-          {/* <div className="relative">
-            <button
-              className="cursor-pointer  hover:text-gray-500"
-              onClick={handleDropdownToggle}
-            >
-              Products
-            </button>
-          </div> */}
-          <a href="#" className="cursor-pointer ">
-            About Us
-          </a>
-          <a href="#" className="cursor-pointer ">
-            Services
-          </a>
-          <a href="#" className="cursor-pointer ">
-            Portfolio
-          </a>
-          <div className="p-5 flex items-center justify-center bg-accent rounded-full">
-            <FaSearch className="text-[1rem] text-primary " />
+        <div className="hidden md:flex gap-8 items-center text-text text-[1.2rem] font-medium">
+          <a href="#" className="cursor-pointer">Home</a>
+          <a href="#" className="cursor-pointer">About Us</a>
+          <a href="#" className="cursor-pointer">Services</a>
+          <a href="#" className="cursor-pointer">Portfolio</a>
+          <div className="p-2 flex items-center justify-center bg-accent rounded-full">
+            <FaSearch className="text-[1rem] text-primary" />
           </div>
           <a
             href="your-contact-url"
@@ -81,29 +53,21 @@ const Navbar = () => {
             CONTACT US
           </a>
         </div>
-        <div className="cursor-pointer md:hidden">
-          <label
-            className=" block cursor-pointer md:hidden px-2 py-4 relative select-none"
-            htmlFor=""
-            onClick={handleToggle}
-          >
-            {toggleMenu ? (
-              <FaTimes className="transition-transform transform rotate-360 duration-300 " />
-            ) : (
-              <FaBars
-                className={`transition-transform transform rotate-360 duration-300 text-background ${"text-text"}`}
-              />
-            )}
-          </label>
+        <div className="cursor-pointer md:hidden" onClick={handleToggle}>
+          {toggleMenu ? (
+            <FaTimes className="transition-transform transform rotate-360 duration-300 text-text" />
+          ) : (
+            <FaBars className="transition-transform transform rotate-360 duration-300 text-text" />
+          )}
         </div>
       </div>
       {toggleMenu && (
-        <div className="md:hidden bg-blue-900 z-20">
-          <ul>
-            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500">
-              Home
+        <div className="md:hidden bg-background z-20">
+          <ul className="flex flex-col items-center">
+            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
+              <a href="#" onClick={handleToggle}>Home</a>
             </li>
-            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500">
+            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
               <button
                 onClick={handleDropdownToggle}
                 className="w-full text-left"
@@ -118,11 +82,11 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
-            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500">
-              About Us
+            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
+              <a href="#" onClick={handleToggle}>About Us</a>
             </li>
-            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500">
-              Contact Us
+            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
+              <a href="#" onClick={handleToggle}>Contact Us</a>
             </li>
           </ul>
         </div>

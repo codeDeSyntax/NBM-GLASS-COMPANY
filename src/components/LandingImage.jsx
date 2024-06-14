@@ -16,12 +16,19 @@ const pieces = Array.from({ length: 1 }, (_, i) => i);
 const FixedImage = () => {
   const [isComplete, setIsComplete] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [nextImage, setNextImage] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Cycle through images
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 9000); // Change image every 5 seconds
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentImage((prev) => (prev + 1) % images.length);
+        setNextImage((prev) => (prev + 1) % images.length);
+        setIsTransitioning(false);
+      }, 1000); // Match the duration of the opacity transition
+    }, 9000); // Change image every 9 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -40,14 +47,45 @@ const FixedImage = () => {
     config: { duration: 1000 },
   });
 
+  const transitionSpring = useSpring({
+    opacity: isTransitioning ? 0 : 1,
+    config: { duration: 1000 },
+  });
+
   return (
     <animated.div
       style={{
         opacity,
-        backgroundImage: `linear-gradient(to right bottom, rgba(30,0,160,0.8), rgba(8,8,8,0.8)), url('${images[currentImage]}')`,
+        position: 'relative',
+        width: '100%',
+       
       }}
-      className={`w-full h-[90vh] md:h-[80vh] bg-cover bg-no-repeat flex items-center justify-center p-4`}
+      className="w-full h-[70vh] md:h-[80vh] bg-cover bg-no-repeat flex items-center justify-center p-4"
     >
+      <animated.div
+        style={{
+          ...transitionSpring,
+          backgroundImage: `linear-gradient(to right bottom, rgba(30,0,160,0.8), rgba(8,8,8,0.8)), url('${images[currentImage]}')`,
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          zIndex: 0,
+        }}
+      />
+      <animated.div
+        style={{
+          opacity: transitionSpring.opacity.to((o) => 1 - o),
+          backgroundImage: `linear-gradient(to right bottom, rgba(30,0,160,0.8), rgba(8,8,8,0.8)), url('${images[nextImage]}')`,
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          zIndex: 0,
+        }}
+      />
       {pieces.map((piece, index) => (
         <motion.div
           key={index}
@@ -77,6 +115,8 @@ const FixedImage = () => {
             backgroundPosition: `${(index % 3) * 33.33}% ${
               Math.floor(index / 3) * 33.33
             }%`,
+            position: 'relative', // Ensure all elements are stacked on top of each other
+            zIndex: 1, // Ensure content is above the background images
           }}
         >
           <h1 className="font-extrabold text-background text-3xl text-center">

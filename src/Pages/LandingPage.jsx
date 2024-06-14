@@ -2,14 +2,15 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import FixedImage from "../components/LandingImage";
-import Tabs from "../components/Tab";
+// import Tabs from "../components/Tab";
 import Socials from "../components/Socials";
-import ProductList from "../components/Products";
+// import ProductList from "../components/Products";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import FloatingWhatsAppIcon from "../components/Whatsapp";
 import ProjectsSlider from "../components/ProjectsSwipe";
 import Navbar from "../components/Navbar";
+import ProductSlider from "../components/QuestService";
 // import MyComponent from "../components/Spring";
 // import Framer from "../components/Spring";
 // import Images from "../components/GalleryScroll";
@@ -87,9 +88,9 @@ const LandingPage = () => {
       >
         <FixedImage />
       </motion.div>
+      <ProductSlider />
 
-      <Tabs />
-      <ProjectsSlider/>
+      {/* <Tabs /> */}
 
       <motion.div
         className="bg-background"
@@ -101,10 +102,11 @@ const LandingPage = () => {
         <Socials />
       </motion.div>
       {/* <Images/> */}
-      <ProductList />
+      {/* <ProductList /> */}
       <ContactForm />
       {/* <MyComponent/> */}
       {/* <Framer /> */}
+      <ProjectsSlider />
       <Footer />
     </div>
   );
