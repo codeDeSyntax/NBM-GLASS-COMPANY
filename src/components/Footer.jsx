@@ -7,13 +7,18 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="py-10 bg-gray-100"
+      className="p-10 bg-gray-100"
     >
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left">
+      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left  ">
         <div className="flex flex-col items-center md:items-start">
-          <img src="proj1.jpg" alt="Saint-Gobain Logo" className="mb-4 w-full h-32 object-cover" />
+          <img
+            src="proj1.jpg"
+            alt="Saint-Gobain Logo"
+            className="mb-4 w-full h-32 object-cover"
+          />
           <p className="text-gray-700 max-w-xs">
-            Saint-Gobain Building Glass manufactures and offers a full range of different types of flat construction glass.
+            Saint-Gobain Building Glass manufactures and offers a full range of
+            different types of flat construction glass.
           </p>
         </div>
 
@@ -21,13 +26,19 @@ const Footer = () => {
           <h4 className="font-semibold text-gray-800 mb-4">Practical Links</h4>
           <ul className="text-gray-700 space-y-2">
             <li>
-              <a href="#" className="hover:text-primary">CE Marking</a>
+              <a href="#" className="hover:text-primary">
+                CE Marking
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-primary">Legal Notice</a>
+              <a href="#" className="hover:text-primary">
+                Legal Notice
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-primary">Your Data and Your Rights</a>
+              <a href="#" className="hover:text-primary">
+                Your Data and Your Rights
+              </a>
             </li>
           </ul>
         </div>
@@ -36,25 +47,39 @@ const Footer = () => {
           <h4 className="font-semibold text-gray-800 mb-4">Local Websites</h4>
           <ul className="text-gray-700 space-y-2">
             <li>
-              <a href="#" className="hover:text-primary">Careers</a>
+              <a href="#" className="hover:text-primary">
+                Careers
+              </a>
             </li>
           </ul>
-          <h4 className="font-semibold text-gray-800 mb-4 mt-6">Other Websites</h4>
+          <h4 className="font-semibold text-gray-800 mb-4 mt-6">
+            Other Websites
+          </h4>
           <ul className="text-gray-700 space-y-2">
             <li>
-              <a href="#" className="hover:text-primary">Saint-Gobain</a>
+              <a href="#" className="hover:text-primary">
+                Saint-Gobain
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-primary">Glassolutions</a>
+              <a href="#" className="hover:text-primary">
+                Glassolutions
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-primary">Vetrotech</a>
+              <a href="#" className="hover:text-primary">
+                Vetrotech
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-primary">SageGlass</a>
+              <a href="#" className="hover:text-primary">
+                SageGlass
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-primary">Swisspacer</a>
+              <a href="#" className="hover:text-primary">
+                Swisspacer
+              </a>
             </li>
           </ul>
         </div>

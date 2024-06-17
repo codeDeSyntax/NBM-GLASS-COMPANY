@@ -2,13 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.foot{
+.foot {
   width: 100vw !important;
 }
-.card-container{
-  font-family: Baloo 2
+.card-container {
+  font-family: Baloo 2;
 }
+
+.custom-swiper-button-prev,
+.custom-swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.custom-swiper-button-prev {
+  left: 10px;
+}
+
+.custom-swiper-button-next {
+  right: 10px;
+}
+
+.custom-swiper-button-prev:hover,
+.custom-swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* #menu-toggle:checked + #menu {
   display: block;
 }

@@ -1,5 +1,7 @@
 import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+Link
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -26,12 +28,12 @@ const Navbar = () => {
           <a href="#" className="cursor-pointer">
             Home
           </a>
-          <a href="#" className="cursor-pointer">
+          <Link to='/' className="cursor-pointer">
             About Us
-          </a>
-          <a href="#" className="cursor-pointer">
+          </Link>
+          <Link to='/other' className="cursor-pointer">
             Services
-          </a>
+          </Link>
           <a href="#" className="cursor-pointer">
             Portfolio
           </a>

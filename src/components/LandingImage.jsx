@@ -119,7 +119,8 @@ const FixedImage = () => {
           }}
         >
           <h1 className="font-extrabold text-accent text-3xl text-center">
-            We Supply <span className="text-secondary font-serif">Quality </span>and{" "}
+            We Supply{" "}
+            <span className="text-secondary font-serif">Quality </span>and{" "}
             <span className=" font-serif">Reliable </span>
             Services..
           </h1>

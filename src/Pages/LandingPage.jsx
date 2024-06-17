@@ -1,21 +1,14 @@
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import FixedImage from "../components/LandingImage";
-// import Tabs from "../components/Tab";
-import Socials from "../components/Socials";
-// import ProductList from "../components/Products";
-import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
-import FloatingWhatsAppIcon from "../components/Whatsapp";
-import ProjectsSlider from "../components/ProjectsSwipe";
-import Navbar from "../components/Navbar";
-import ProductSlider from "../components/QuestService";
-import ServiceCategory from "../components/Servicecategory";
-import Mac from "../components/Mac";
-// import MyComponent from "../components/Spring";
-// import Framer from "../components/Spring";
-// import Images from "../components/GalleryScroll";
+import  { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import FixedImage from '../components/LandingImage';
+import Socials from '../components/Socials';
+import ContactForm from '../components/ContactForm';
+import FloatingWhatsAppIcon from '../components/Whatsapp';
+import ProjectsSlider from '../components/ProjectsSwipe';
+import ProductSlider from '../components/QuestService';
+import ServiceCategory from '../components/Servicecategory';
+import Mac from '../components/Mac';
 
 const cardVariants = {
   offscreen: {
@@ -26,7 +19,7 @@ const cardVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: 'spring',
       bounce: 0.4,
       duration: 0.8,
     },
@@ -36,7 +29,6 @@ const cardVariants = {
 const LandingPage = () => {
   const background = "url('home.jpeg')"; // Adjust this path to your background image
 
-  // Hooks for each section
   const fixedImageControls = useAnimation();
   const socialControls = useAnimation();
 
@@ -49,29 +41,27 @@ const LandingPage = () => {
     threshold: 0.2,
   });
 
-  // Trigger animations when components are in view
   useEffect(() => {
     if (fixedImageInView) {
-      fixedImageControls.start("onscreen");
+      fixedImageControls.start('onscreen');
     }
   }, [fixedImageInView, fixedImageControls]);
 
   useEffect(() => {
     if (socialInView) {
-      socialControls.start("onscreen");
+      socialControls.start('onscreen');
     }
   }, [socialInView, socialControls]);
 
   return (
     <div
-      className="card-container bg-background font-heading"
-      style={{ position: "relative", overflow: "hidden" }}
+      
     >
       <div
         className="splash"
         style={{
           background,
-          position: "absolute",
+          position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
@@ -79,7 +69,6 @@ const LandingPage = () => {
           zIndex: -1,
         }}
       />
-      <Navbar />
       <FloatingWhatsAppIcon />
       <motion.div
         className="bg-background"
@@ -92,10 +81,7 @@ const LandingPage = () => {
       </motion.div>
       <ServiceCategory />
       <ProductSlider />
-
-      {/* <Tabs /> */}
       <ProjectsSlider />
-
       <motion.div
         className="bg-background"
         ref={socialRef}
@@ -106,12 +92,7 @@ const LandingPage = () => {
         <Socials />
       </motion.div>
       <Mac />
-      {/* <Images/> */}
-      {/* <ProductList /> */}
       <ContactForm />
-      {/* <MyComponent/> */}
-      {/* <Framer /> */}
-      <Footer />
     </div>
   );
 };

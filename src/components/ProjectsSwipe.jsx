@@ -1,10 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function ProjectsSlider() {
   return (
-    <div className="relative w-full h-[70vh] md:h-[90vh] bg-[url('/backg.png')] bg-cover flex items-center justify-center ">
+    <div className="relative w-full h-[70vh] md:h-[90vh] bg-[url('/backg.png')] bg-cover flex items-center justify-center">
       <div className="container mx-auto px-4">
         <div className="text-white mb-6 text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-bold text-background">
@@ -23,7 +24,10 @@ function ProjectsSlider() {
             1024: { slidesPerView: 3 },
             1280: { slidesPerView: 3 },
           }}
-          navigation={true}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
           modules={[Navigation]}
           className="mySwiper backdrop-blur-3xl mb-20 md:mb-0"
         >
@@ -45,6 +49,12 @@ function ProjectsSlider() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="swiper-button-prev custom-swiper-button">
+          <FaArrowLeft className="text-white text-2xl" />
+        </div>
+        <div className="swiper-button-next custom-swiper-button">
+          <FaArrowRight className="text-white text-2xl" />
+        </div>
       </div>
     </div>
   );
