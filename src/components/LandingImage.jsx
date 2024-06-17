@@ -88,13 +88,13 @@ const FixedImage = () => {
       {pieces.map((piece, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, scale: 0.5, filter: "blur(5px)" }}
+          initial={{ opacity: 0, scale: 0.5, filter: "blur(2px)" }}
           animate={{
-            opacity: 1,
+            opacity: 2,
             scale: isComplete ? 1 : 0.5,
             x: isComplete ? `${-((index % 3) * 33.33)}%` : 0,
             y: isComplete ? `${-(Math.floor(index / 3) * 33.33)}%` : 0,
-            filter: isComplete ? "blur(0px)" : "blur(5px)",
+            filter: isComplete ? "blur(0px)" : "blur(2px)",
             background: isComplete ? "transparent" : "rgba(255, 255, 255, 0.2)",
           }}
           transition={{

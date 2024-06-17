@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const ContactForm = () => {
   return (
     <div className="container bg-no-repeat lg:w-[80%] mx-auto flex flex-col items-center shadow-lg bg-[url(nbmlog1.jpeg)] bg-cover rounded-lg my-8">
-      <div className="w-full h-full bg-primary flex items-center justify-center backdrop-blur-md rounded-lg">
+      <div className="w-full h-full p-6 bg-primary flex items-center justify-center backdrop-blur-md rounded-lg">
         <motion.div
           className="w-full lg:w-[60%] py-8 mt-6"
           initial={{ opacity: 0, y: 50 }}

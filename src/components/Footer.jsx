@@ -7,9 +7,9 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="p-10 bg-gray-100"
+      className="p-10 bg-accent"
     >
-      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left  ">
+      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left ">
         <div className="flex flex-col items-center md:items-start">
           <img
             src="proj1.jpg"

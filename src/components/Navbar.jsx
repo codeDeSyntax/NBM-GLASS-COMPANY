@@ -1,11 +1,11 @@
-import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
-import { useState } from "react";
+import { FaBars, FaSearch, FaTimes, FaCaretDown } from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-Link
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const handleToggle = () => {
     setToggleMenu(!toggleMenu);
@@ -14,6 +14,25 @@ const Navbar = () => {
   const handleDropdownToggle = () => {
     setDropdownOpen(!dropdownOpen);
   };
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setToggleMenu(false);
+      setDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (toggleMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [toggleMenu]);
 
   return (
     <nav
@@ -28,14 +47,17 @@ const Navbar = () => {
           <a href="#" className="cursor-pointer">
             Home
           </a>
-          <Link to='/' className="cursor-pointer">
+          <Link to="/" className="cursor-pointer">
             About Us
           </Link>
-          <Link to='/other' className="cursor-pointer">
+          <Link to="" className="cursor-pointer">
             Services
           </Link>
           <a href="#" className="cursor-pointer">
             Portfolio
+          </a>
+          <a href="/projects" className="cursor-pointer">
+            Projects
           </a>
           <div className="p-2 flex items-center justify-center bg-accent rounded-full">
             <FaSearch className="text-[1rem] text-primary" />
@@ -69,42 +91,66 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {toggleMenu && (
-        <div className="md:hidden bg-background z-20">
-          <ul className="flex flex-col items-center">
-            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
-              <a href="#" onClick={handleToggle}>
-                Home
-              </a>
-            </li>
-            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
-              <button
-                onClick={handleDropdownToggle}
-                className="w-full text-left"
-              >
-                Products
-              </button>
-              {dropdownOpen && (
-                <ul className="bg-primary">
-                  <li className="p-2 hover:bg-blue-700">Product 1</li>
-                  <li className="p-2 hover:bg-blue-700">Product 2</li>
-                  <li className="p-2 hover:bg-blue-700">Product 3</li>
-                </ul>
-              )}
-            </li>
-            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
-              <a href="#" onClick={handleToggle}>
-                About Us
-              </a>
-            </li>
-            <li className="border-b border-gray-700 py-2 px-3 hover:text-gray-500 w-full text-center">
-              <a href="#" onClick={handleToggle}>
-                Contact Us
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
+      <div
+        ref={menuRef}
+        className={`md:hidden bg-background z-20 transition-all duration-300 ease-in-out overflow-hidden ${
+          toggleMenu ? "max-h-[100vh] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="flex flex-col items-center p-2 justify-start">
+          <li className="border-gray-700 py-2 px-3 hover:text-gray-500 w-full ">
+            <Link to="/" onClick={handleToggle}>
+              Home
+            </Link>
+          </li>
+          <li className="border-gray-700 py-2 px-3 hover:text-gray-500 w-full ">
+            <button
+              onClick={handleDropdownToggle}
+              className="w-full  flex items-center justify-start"
+            >
+              Products <FaCaretDown />
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                dropdownOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <ul className="bg-secondary w-full text-background">
+                <li className="p-2 hover:bg-blue-700 w-full text-center">
+                  <Link to="/" onClick={handleToggle}>
+                    Product 1
+                  </Link>
+                </li>
+                <li className="p-2 hover:bg-blue-700 w-full text-center">
+                  <Link to="/" onClick={handleToggle}>
+                    Product 2
+                  </Link>
+                </li>
+                <li className="p-2 hover:bg-blue-700 w-full text-center">
+                  <Link to="/" onClick={handleToggle}>
+                    Product 3
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className="border-[gray] py-2 px-3 hover:text-gray-500 w-full ">
+            <Link to="/other" onClick={handleToggle}>
+              About Us
+            </Link>
+          </li>
+          <li className="border-[gray] py-2 px-3 hover:text-gray-500 w-full ">
+            <Link href="#" onClick={handleToggle}>
+              Contact Us
+            </Link>
+          </li>
+          <li className="border-[gray] py-2 px-3 hover:text-gray-500 w-full ">
+            <Link to="projects" onClick={handleToggle}>
+              Projects
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };

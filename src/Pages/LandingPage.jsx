@@ -1,14 +1,15 @@
-import  { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import FixedImage from '../components/LandingImage';
-import Socials from '../components/Socials';
-import ContactForm from '../components/ContactForm';
-import FloatingWhatsAppIcon from '../components/Whatsapp';
-import ProjectsSlider from '../components/ProjectsSwipe';
-import ProductSlider from '../components/QuestService';
-import ServiceCategory from '../components/Servicecategory';
-import Mac from '../components/Mac';
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import FixedImage from "../components/LandingImage";
+import Socials from "../components/Socials";
+import ContactForm from "../components/ContactForm";
+import FloatingWhatsAppIcon from "../components/Whatsapp";
+import ProjectsSlider from "../components/ProjectsSwipe";
+import ProductSlider from "../components/QuestService";
+import ServiceCategory from "../components/Servicecategory";
+import Mac from "../components/Mac";
+// import ProjectGallery from '../components/ProjectsGallery';
 
 const cardVariants = {
   offscreen: {
@@ -19,7 +20,7 @@ const cardVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       bounce: 0.4,
       duration: 0.8,
     },
@@ -27,7 +28,7 @@ const cardVariants = {
 };
 
 const LandingPage = () => {
-  const background = "url('home.jpeg')"; // Adjust this path to your background image
+  const background = "url('nbmlog1.jpeg')"; // Adjust this path to your background image
 
   const fixedImageControls = useAnimation();
   const socialControls = useAnimation();
@@ -43,25 +44,23 @@ const LandingPage = () => {
 
   useEffect(() => {
     if (fixedImageInView) {
-      fixedImageControls.start('onscreen');
+      fixedImageControls.start("onscreen");
     }
   }, [fixedImageInView, fixedImageControls]);
 
   useEffect(() => {
     if (socialInView) {
-      socialControls.start('onscreen');
+      socialControls.start("onscreen");
     }
   }, [socialInView, socialControls]);
 
   return (
-    <div
-      
-    >
+    <div>
       <div
         className="splash"
         style={{
           background,
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
           right: 0,

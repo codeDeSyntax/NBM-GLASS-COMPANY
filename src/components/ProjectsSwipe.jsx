@@ -33,7 +33,7 @@ function ProjectsSlider() {
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-background rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-[white] rounded-lg shadow-lg overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}

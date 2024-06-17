@@ -26,10 +26,10 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10"
+      className="absolute right-2 md:right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full bg-primary"
       onClick={onClick}
     >
-      <FaArrowRight className="text-black text-2xl cursor-pointer" />
+      <FaArrowRight className="text-background text-2xl cursor-pointer size-5" />
     </div>
   );
 };
@@ -42,10 +42,10 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
+      className="absolute bg-primary left-2 md:left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full"
       onClick={onClick}
     >
-      <FaArrowLeft className="text-black text-2xl cursor-pointer" />
+      <FaArrowLeft className="text-background text-2xl  cursor-pointer size-5" />
     </div>
   );
 };
@@ -66,25 +66,29 @@ function TestimonialSlider() {
   };
 
   return (
-    <div className="relative w-[80%] h-[70vh] md:h-[90vh] bg-white flex items-center justify-center">
-      <div className="container mx-auto px-4">
-        <Slider {...settings}>
+    <div className="relative w-full md:w-[80%] h-[70vh] md:h-[90vh] bg-white flex-col flex items-center justify-center">
+      <h2 className="text-2xl font-bold text-secondary mb-4">SUSTAINABILITY</h2>
+      <div className="container mx-auto px-4 bg-[white]">
+        <Slider {...settings} className="bg-[white]">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="flex items-center justify-center p-8">
-              <div className="flex items-center w-full">
+            <div
+              key={index}
+              className="flex flex-col md:flex-row items-center justify-center p-4 md:p-8"
+            >
+              <div className="flex flex-col md:flex-row items-center w-full">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-32 h-32 object-cover rounded-full mr-8"
+                  className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full mb-4 md:mb-0 md:mr-8"
                 />
-                <div>
-                  <h3 className="text-2xl font-bold">
+                <div className="text-center md:text-left">
+                  <h3 className="text-xl md:text-2xl font-bold">
                     {testimonial.name},{" "}
                     <span className="italic">{testimonial.title}</span>
                   </h3>
                   <p className="mt-4">{testimonial.quote}</p>
-                  <button className="mt-4 px-4 py-2 bg-black text-white rounded-full shadow-lg hover:bg-gray-800">
-                    read more
+                  <button className="mt-4 px-4 py-2 bg-secondary text-background rounded-full shadow-lg hover:bg-gray-800">
+                    Read More
                   </button>
                 </div>
               </div>
