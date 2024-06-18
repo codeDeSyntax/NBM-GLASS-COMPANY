@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <div className="flex gap-4 flex-col md:flex-row justify-center items-center min-h-screen bg-gray-100 p-4">
       <motion.div
-        className="bg-primary text-background md:h-[80vh]  p-8 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3 m-2"
+        className="bg-primary text-background h-[80vh]  p-8 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3 m-2"
         initial={{ x: "100vw" }}
         animate={{ x: 0 }}
         transition={{ type: "spring", stiffness: 50, delay: 0.3 }}

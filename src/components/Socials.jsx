@@ -1,7 +1,6 @@
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Qualities from "./Qualities";
+// import Qualities from "./Qualities";
 import TestimonialSlider from "./Testimonial";
 
 // const testimonials = [
@@ -13,11 +12,10 @@ import TestimonialSlider from "./Testimonial";
 // ];
 
 const Socials = () => {
- 
   return (
     <div className="bg-background py-[10vh] flex flex-col items-center justify-between p-4">
-      <Qualities/>
-     <TestimonialSlider/>      
+      {/* <Qualities/> */}
+      <TestimonialSlider />
     </div>
   );
 };

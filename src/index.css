@@ -2,12 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 .foot {
   width: 100vw !important;
 }
 .card-container {
   font-family: Baloo 2;
 }
+
 
 .custom-swiper-button-prev,
 .custom-swiper-button-next {

@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LandingPage from './Pages/LandingPage';
 // import OtherPage from './components/OtherPage';
+
+
 import ProjectGallery from './components/ProjectsGallery';
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
         <Footer />
       </div>
     </Router>
+    // <ProductGallery/>
   );
 };
 

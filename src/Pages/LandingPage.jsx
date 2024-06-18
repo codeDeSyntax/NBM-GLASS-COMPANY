@@ -9,6 +9,7 @@ import ProjectsSlider from "../components/ProjectsSwipe";
 import ProductSlider from "../components/QuestService";
 import ServiceCategory from "../components/Servicecategory";
 import Mac from "../components/Mac";
+import Contact from "../components/ContactForm";
 // import ProjectGallery from '../components/ProjectsGallery';
 
 const cardVariants = {
@@ -88,10 +89,12 @@ const LandingPage = () => {
         animate={socialControls}
         variants={cardVariants}
       >
+        <Mac />
         <Socials />
       </motion.div>
-      <Mac />
-      <ContactForm />
+
+      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 };
