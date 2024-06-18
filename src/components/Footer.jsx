@@ -1,20 +1,25 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { FaTwitter, FaLinkedin, FaGlobe } from "react-icons/fa";
 
 const Footer = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px 0px" });
+
   return (
     <motion.footer
+      ref={ref}
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="p-10 bg-accent"
+      className="p-10 bg-primary text-background"
     >
-      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left ">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left">
         <div className="flex flex-col items-center md:items-start">
           <img
             src="proj1.jpg"
             alt="Saint-Gobain Logo"
-            className="mb-4 w-full h-32 object-cover"
+            className="mb-4 w-full h-32 object-cover border-2 border-background"
           />
           <p className="text-gray-700 max-w-xs">
             Saint-Gobain Building Glass manufactures and offers a full range of
@@ -87,7 +92,7 @@ const Footer = () => {
         <div className="flex flex-col items-center md:items-start">
           <h4 className="font-semibold text-gray-800 mb-4">Other Countries</h4>
           <div className="relative inline-block w-full text-gray-700 mb-4">
-            <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+            <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-text">
               <option>United Kingdom</option>
               {/* Add more options here */}
             </select>
@@ -104,13 +109,13 @@ const Footer = () => {
           <h4 className="font-semibold text-gray-800 mb-4">Follow Us</h4>
           <div className="flex space-x-4">
             <a href="#" className="text-secondary hover:text-primary">
-              <FaTwitter size={24} />
+              <FaTwitter size={24} className="text-background animate-ping" />
             </a>
             <a href="#" className="text-secondary hover:text-primary">
-              <FaLinkedin size={24} />
+              <FaLinkedin size={24} className="text-background animate-pulse" />
             </a>
             <a href="#" className="text-secondary hover:text-primary">
-              <FaGlobe size={24} />
+              <FaGlobe size={24} className="animate-spin" />
             </a>
           </div>
         </div>
