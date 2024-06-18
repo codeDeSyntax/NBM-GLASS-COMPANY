@@ -10,7 +10,6 @@ import ProductSlider from "../components/QuestService";
 import ServiceCategory from "../components/Servicecategory";
 import Mac from "../components/Mac";
 import Contact from "../components/ContactForm";
-import Framer from "../components/Spring";
 // import ProjectGallery from '../components/ProjectsGallery';
 
 const cardVariants = {
@@ -71,7 +70,6 @@ const LandingPage = () => {
         }}
       />
       <FloatingWhatsAppIcon />
-      <Framer/>
       <motion.div
         className="bg-background"
         ref={fixedImageRef}
