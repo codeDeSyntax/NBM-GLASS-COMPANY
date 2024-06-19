@@ -53,6 +53,9 @@ const Navbar = () => {
           <Link to="" className="cursor-pointer">
             Services
           </Link>
+          <Link to="/Contact" className="cursor-pointer">
+            Contact
+          </Link>
           <a href="#" className="cursor-pointer">
             Portfolio
           </a>
@@ -140,7 +143,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="border-[gray] py-2 px-3 hover:text-gray-500 w-full ">
-            <Link href="#" onClick={handleToggle}>
+            <Link to="/Contact" onClick={handleToggle}>
               Contact Us
             </Link>
           </li>

@@ -61,7 +61,7 @@ const ProductSlider = () => {
   };
 
   return (
-    <div className="container mx-auto p-8">
+    <div className=" mx-auto p-8 bg-background">
       <h2 className="text-xl font-bold text-secondary mb-4">
         WHICH PRODUCT ARE YOU LOOKING FOR?
       </h2>
@@ -69,7 +69,7 @@ const ProductSlider = () => {
       <Slider {...settings}>
         {products.map((product, index) => (
           <div key={index} className="p-4">
-            <div className="flex flex-col items-center p-2 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="flex flex-col items-center p-2 bg-[white] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="w-full h-40 mb-2 flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden">
                 <img
                   src={product.icon}

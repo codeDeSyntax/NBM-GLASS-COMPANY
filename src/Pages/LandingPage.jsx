@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import FixedImage from "../components/LandingImage";
 import Socials from "../components/Socials";
-import ContactForm from "../components/ContactForm";
+// import ContactForm from "../components/ContactForm";
 import FloatingWhatsAppIcon from "../components/Whatsapp";
 import ProjectsSlider from "../components/ProjectsSwipe";
 import ProductSlider from "../components/QuestService";
