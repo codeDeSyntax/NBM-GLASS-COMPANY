@@ -131,7 +131,7 @@ const FixedImage = () => {
             {/* <div className="p-[6px] text-background border-[1px] hover:bg-primary hover:text-background  transition border-background rounded-md text-[.8rem]">
               See what we do
             </div> */}
-            <div className="p-[6px] text-background hover:bg-primary hover:text-background  transition border-[1px] border-background rounded-md text-[.8rem]">
+            <div className="p-3 rounded-md bg-secondary text-background hover:bg-primary hover:text-background text-[.8rem]">
               View our portfolio here
             </div>
           </div>
