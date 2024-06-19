@@ -59,7 +59,7 @@ const FixedImage = () => {
         position: "relative",
         width: "100%",
       }}
-      className="w-full h-[70vh] md:h-[80vh] bg-cover bg-no-repeat flex items-center justify-center p-4"
+      className="w-full h-[60vh] md:h-[80vh] bg-cover bg-no-repeat flex items-center justify-center p-4"
     >
       <animated.div
         style={{
@@ -105,7 +105,6 @@ const FixedImage = () => {
           style={{
             padding: "20px",
             backgroundSize: `300% 300%`,
-            border: "2px solid white",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -117,8 +116,9 @@ const FixedImage = () => {
             position: "relative", // Ensure all elements are stacked on top of each other
             zIndex: 1, // Ensure content is above the background images
           }}
+          className="border-none md:border-[1px] border-background"
         >
-          <h1 className="font-extrabold text-accent text-3xl text-center">
+          <h1 className="font-extrabold text-accent text-xl md:text-3xl text-center">
             We Supply{" "}
             <span className="text-secondary font-serif">Quality </span>and{" "}
             <span className=" font-serif">Reliable </span>
@@ -128,9 +128,9 @@ const FixedImage = () => {
             suppliers and fabricators of all aluminum systems.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <div className="p-[6px] text-background border-[1px] hover:bg-primary hover:text-background  transition border-background rounded-md text-[.8rem]">
+            {/* <div className="p-[6px] text-background border-[1px] hover:bg-primary hover:text-background  transition border-background rounded-md text-[.8rem]">
               See what we do
-            </div>
+            </div> */}
             <div className="p-[6px] text-background hover:bg-primary hover:text-background  transition border-[1px] border-background rounded-md text-[.8rem]">
               View our portfolio here
             </div>

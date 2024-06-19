@@ -26,7 +26,7 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute right-4 md:right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full bg-secondary"
+      className="absolute right-[-20px] md:right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full bg-secondary"
       onClick={onClick}
     >
       <FaArrowRight className="text-background text-2xl cursor-pointer size-5" />
@@ -42,7 +42,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute bg-secondary left-4 md:left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full "
+      className="absolute bg-secondary left-[-20px] md:left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full "
       onClick={onClick}
     >
       <FaArrowLeft className="text-background text-2xl  cursor-pointer size-5" />

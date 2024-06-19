@@ -62,7 +62,7 @@ const ProductSlider = () => {
 
   return (
     <div className="container mx-auto p-8">
-      <h2 className="text-2xl font-bold text-secondary mb-4">
+      <h2 className="text-xl font-bold text-secondary mb-4">
         WHICH PRODUCT ARE YOU LOOKING FOR?
       </h2>
       <p className="text-xl text-text mb-8">Our products by categories</p>

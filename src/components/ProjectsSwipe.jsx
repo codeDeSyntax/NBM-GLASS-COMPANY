@@ -25,11 +25,11 @@ function ProjectsSlider() {
             1280: { slidesPerView: 3 },
           }}
           navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
           }}
           modules={[Navigation]}
-          className="mySwiper backdrop-blur-3xl mb-20 md:mb-0"
+          className="mySwiper backdrop-blur-3xl md:mb-0"
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index}>

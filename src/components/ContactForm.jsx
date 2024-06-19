@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 export default function Contact() {
   return (
     <div className="  my-40">
-      <h2 className="text-2xl font-bold text-center text-secondary mb-4">
+      <h2 className="text-xl font-bold text-center text-secondary mb-4">
         Reach out to us for any queries
       </h2>
       <div className="flex gap-4 flex-col md:flex-row justify-center items-center bg-gray-100 p-4 w-full ">
         <motion.div
-          className="bg-primary text-background   p-8 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3 m-2"
+          className="bg-primary text-background   p-8  shadow-lg w-full md:w-1/2 lg:w-1/3 m-2"
           initial={{ x: "100vw" }}
           animate={{ x: 0 }}
           transition={{ type: "spring", stiffness: 50, delay: 0.3 }}
@@ -31,12 +31,12 @@ export default function Contact() {
         </button> */}
         </motion.div>
         <motion.div
-          className=" p-8 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/2 m-2"
+          className=" p-8  shadow-lg shadow-primary w-full md:w-1/2 lg:w-1/2 m-2"
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
           transition={{ type: "spring", stiffness: 50, delay: 0.4 }}
         >
-          <h2 className="text-2xl font-bold mb-4 text-[red]">Contact Us</h2>
+          <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
           <form className="flex flex-col justify-between min-h-full">
             <div className="mb-4">
               <label className="block text-gray-700">Enter your Name</label>
