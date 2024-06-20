@@ -1,18 +1,31 @@
 import { FaSearch } from "react-icons/fa";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
-const ContactHome = () => {
+const ContactHome = ({ vid }) => {
   return (
-    <div className="p-2 flex flex-col md:flex-row items-center bg-secondary mt-[10vh] text-white relative">
-      <div className="w-full md:w-1/2 overflow-hidden">
-        <motion.img
-          src="nbmlog1.jpeg"
-          alt="Template Example"
-          className="object-cover w-full h-full rounded-lg"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2 }}
-        />
+    <div className="p-2 flex flex-col md:flex-row items-center bg-secondary mt-[4vh] md:mt-[9vh] text-white relative">
+      <div className="w-full md:w-1/2 overflow-hidden flex items-center justify-center">
+        {vid ? (
+          <motion.video
+            src={vid}
+            autoPlay
+            loop
+            muted
+            className="object-cover  w-full md:w-[80%]  rounded-lg"
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 2 }}
+          />
+        ) : (
+          <motion.img
+            src="/worksample/frame1.jpg"
+            className="  w-full md:w-[80%]  rounded-lg"
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 2 }}
+          />
+        )}
       </div>
       <div className="w-full max-w-4xl px-4 py-10 text-center md:text-left md:w-1/2">
         <motion.h1
@@ -21,7 +34,7 @@ const ContactHome = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          Suppliers and fabricators of all aluminum systems
+          Suppliers and fabricators of all aluminum systems{vid}
         </motion.h1>
         <motion.div
           className="mb-6 flex items-center justify-center md:justify-start"
@@ -51,6 +64,10 @@ const ContactHome = () => {
       </div>
     </div>
   );
+};
+
+ContactHome.propTypes = {
+  vid: PropTypes.string.isRequired,
 };
 
 export default ContactHome;

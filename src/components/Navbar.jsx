@@ -1,11 +1,12 @@
 import { FaBars, FaSearch, FaTimes, FaCaretDown } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const menuRef = useRef(null);
+  const location = useLocation();
 
   const handleToggle = () => {
     setToggleMenu(!toggleMenu);
@@ -34,6 +35,8 @@ const Navbar = () => {
     };
   }, [toggleMenu]);
 
+  const isActiveLink = (path) => location.pathname === path;
+
   return (
     <nav
       className={`fixed top-0 w-full flex justify-center flex-col shadow-md z-30 bg-background`}
@@ -44,22 +47,40 @@ const Navbar = () => {
           <p className="font-bold tracking-widest font-serif ml-2">NBM</p>
         </div>
         <div className="hidden md:flex gap-8 items-center text-base font-body font-medium">
-          <Link to="/" className="cursor-pointer">
+          <Link
+            to="/"
+            className={`cursor-pointer ${isActiveLink("/") ? "border-b-2 border-primary" : ""}`}
+          >
             Home
           </Link>
-          <Link to="/about" className="cursor-pointer">
+          <Link
+            to="/about"
+            className={`cursor-pointer ${isActiveLink("/about") ? "border-b-2 border-primary" : ""}`}
+          >
             About Us
           </Link>
-          <Link to="" className="cursor-pointer">
+          <Link
+            to="/services"
+            className={`cursor-pointer ${isActiveLink("/services") ? "border-b-2 border-primary" : ""}`}
+          >
             Services
           </Link>
-          <Link to="/Contact" className="cursor-pointer">
+          <Link
+            to="/contact"
+            className={`cursor-pointer ${isActiveLink("/contact") ? "border-b-2 border-primary" : ""}`}
+          >
             Contact
           </Link>
-          <a href="#" className="cursor-pointer">
+          <a
+            href="/portfolio"
+            className={`cursor-pointer ${isActiveLink("/portfolio") ? "border-b-2 border-primary" : ""}`}
+          >
             Portfolio
           </a>
-          <a href="/projects" className="cursor-pointer">
+          <a
+            href="/projects"
+            className={`cursor-pointer ${isActiveLink("/projects") ? "border-b-2 border-primary" : ""}`}
+          >
             Projects
           </a>
           <div className="p-2 flex items-center justify-center bg-accent rounded-full">
@@ -102,14 +123,18 @@ const Navbar = () => {
       >
         <ul className="flex flex-col items-center p-2 justify-start">
           <li className="border-gray-700 py-2 px-3 hover:text-gray-500 w-full ">
-            <Link to="/" onClick={handleToggle}>
+            <Link
+              to="/"
+              onClick={handleToggle}
+              className={`${isActiveLink("/") ? "border-b-2 border-primary" : ""}`}
+            >
               Home
             </Link>
           </li>
           <li className="border-gray-700 py-2 px-3 hover:text-gray-500 w-full ">
             <button
               onClick={handleDropdownToggle}
-              className="w-full  flex items-center justify-start"
+              className={`w-full flex items-center justify-start ${isActiveLink("/products") ? "border-b-2 border-primary" : ""}`}
             >
               Products <FaCaretDown />
             </button>
@@ -120,17 +145,29 @@ const Navbar = () => {
             >
               <ul className="bg-secondary w-full text-background">
                 <li className="p-2 hover:bg-blue-700 w-full text-center">
-                  <Link to="/" onClick={handleToggle}>
+                  <Link
+                    to="/product1"
+                    onClick={handleToggle}
+                    className={`${isActiveLink("/product1") ? "border-b-2 border-primary" : ""}`}
+                  >
                     Product 1
                   </Link>
                 </li>
                 <li className="p-2 hover:bg-blue-700 w-full text-center">
-                  <Link to="/" onClick={handleToggle}>
+                  <Link
+                    to="/product2"
+                    onClick={handleToggle}
+                    className={`${isActiveLink("/product2") ? "border-b-2 border-primary" : ""}`}
+                  >
                     Product 2
                   </Link>
                 </li>
                 <li className="p-2 hover:bg-blue-700 w-full text-center">
-                  <Link to="/" onClick={handleToggle}>
+                  <Link
+                    to="/product3"
+                    onClick={handleToggle}
+                    className={`${isActiveLink("/product3") ? "border-b-2 border-primary" : ""}`}
+                  >
                     Product 3
                   </Link>
                 </li>
@@ -138,17 +175,29 @@ const Navbar = () => {
             </div>
           </li>
           <li className="border-[gray] py-2 px-3 hover:text-gray-500 w-full ">
-            <Link to="/about" onClick={handleToggle}>
+            <Link
+              to="/about"
+              onClick={handleToggle}
+              className={`${isActiveLink("/about") ? "border-b-2 border-primary" : ""}`}
+            >
               About Us
             </Link>
           </li>
           <li className="border-[gray] py-2 px-3 hover:text-gray-500 w-full ">
-            <Link to="/Contact" onClick={handleToggle}>
+            <Link
+              to="/contact"
+              onClick={handleToggle}
+              className={`${isActiveLink("/contact") ? "border-b-2 border-primary" : ""}`}
+            >
               Contact Us
             </Link>
           </li>
           <li className="border-[gray] py-2 px-3 hover:text-gray-500 w-full ">
-            <Link to="projects" onClick={handleToggle}>
+            <Link
+              to="/projects"
+              onClick={handleToggle}
+              className={`${isActiveLink("/projects") ? "border-b-2 border-primary" : ""}`}
+            >
               Projects
             </Link>
           </li>

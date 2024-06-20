@@ -1,18 +1,21 @@
+import ContactHome from "./ContactHome";
+
 const ProjectGallery = () => {
   const projects = [
-    { src: "/glassset.jpeg", type: "large" },
-    { src: "/glassset.jpeg", type: "small" },
+    { src: "worksample/frame1.jpg", type: "large" },
+    { src: "worksample/sample1.jpeg", type: "small" },
     { src: "/glassar.jpg", type: "small" },
     { src: "glassroom.jpeg", type: "large" },
-    { src: "/glassset.jpeg", type: "large" },
-    { src: "/glassset.jpeg", type: "small" },
-    { src: "/glassset.jpeg", type: "small" },
+    { src: "/worksample/windowframe3.jpg", type: "small" },
+    { src: "/worksample/windowframe4.jpg", type: "small" },
+    { src: "/worksample/frame1.jpg", type: "small" },
     { src: "/glassset.jpeg", type: "large" },
     { src: "/glassset.jpeg", type: "small" },
   ];
 
   return (
     <div className="flex flex-col items-center justify-center py-14 px-4 md:px-8 lg:px-16 bg-white">
+      <ContactHome vid="large.mp4" />
       <h2 className="text-2xl font-bold text-secondary mb-2">Our Projects</h2>
       <p className="text-gray-500 mb-6 text-center">
         Sample text. Click to select the text box. Click again or double click
@@ -24,7 +27,7 @@ const ProjectGallery = () => {
             key={index}
             className={`overflow-hidden rounded-lg shadow-md ${
               project.type === "large"
-                ? "row-span-2 col-span-1 sm:col-span-2"
+                ? "row-span-1 col-span-1 sm:col-span-3"
                 : "h-64"
             }`}
           >
