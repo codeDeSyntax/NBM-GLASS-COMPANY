@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
+import ContactHome from "../components/ContactHome";
 
 export default function Contact() {
   return (
-    <div className="  my-0 ">
-      <h2 className="text-xl font-bold text-center text-text mb-4">
+    <div className="">
+        <ContactHome/>
+        <div className="  my-0 ">
+      {/* <h2 className="text-xl font-bold text-center text-text mb-4">
         Reach out to us for any queries
-      </h2>
+      </h2> */}
       <div className="flex gap-4 flex-col md:flex-row justify-center items-center bg-gray-100 p-4 w-full ">
         <motion.div
           className=" p-4   shadow-sm shadow-secondary w-full bg-background m-2"
@@ -145,6 +148,7 @@ export default function Contact() {
           </div>
         </motion.div>
       </div>
+    </div>
     </div>
   );
 }

@@ -44,10 +44,10 @@ const Navbar = () => {
           <p className="font-bold tracking-widest font-serif ml-2">NBM</p>
         </div>
         <div className="hidden md:flex gap-8 items-center text-base font-body font-medium">
-          <a href="#" className="cursor-pointer">
-            Home
-          </a>
           <Link to="/" className="cursor-pointer">
+            Home
+          </Link>
+          <Link to="/about" className="cursor-pointer">
             About Us
           </Link>
           <Link to="" className="cursor-pointer">
@@ -138,7 +138,7 @@ const Navbar = () => {
             </div>
           </li>
           <li className="border-[gray] py-2 px-3 hover:text-gray-500 w-full ">
-            <Link to="/other" onClick={handleToggle}>
+            <Link to="/about" onClick={handleToggle}>
               About Us
             </Link>
           </li>

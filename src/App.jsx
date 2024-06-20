@@ -7,9 +7,12 @@ import Contact from './Pages/ContactPage';
 
 
 import ProjectGallery from './components/ProjectsGallery';
+import ScrollToTop from './components/ScrollTop';
+import AboutUsPage from './Pages/About';
 const App = () => {
   return (
     <Router>
+      <ScrollToTop/>
       <div
         className=""
       >
@@ -19,6 +22,7 @@ const App = () => {
             <Route exact path="/" element={<LandingPage/>} />
             <Route path="/projects" element={<ProjectGallery/>} />
             <Route path="/Contact" element={<Contact/>} />
+            <Route path="/about" element={<AboutUsPage/>} />
           </Routes>
         </div>
         <Footer />
